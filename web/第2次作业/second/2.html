@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--    &lt;!&ndash;[if lt IE 9]>-->
+    <!--    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
+    <!--    <![endif]&ndash;&gt;-->
+
+    <title>2.html</title>
+</head>
+
+<body onload="writeIMG()" id="main">
+
+
+<div id="content-wrapper">
+    <div class="inner clearfix">
+        <section id="main-content">
+
+            <p><input type="file" id="file" accept="image/*" draggable="true"/></p>
+
+
+            <!--            <a href="javascript: writeIMG()" class="button">Write message into image</a>-->
+            <a href="javascript: readIMG()" class="button"><span style="color:black">Read message from image</span></a>
+            <h4 style="color:blue">Results</h4>
+            <p>
+            <div id="result" style="background-color: rgba(0,255,0,0.3); padding: 10px 10px 10px 10px;">
+            </div>
+            </p>
+            <h4 style="color:blue"></h4>
+        </section>
+
+
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/Crypto/jquery.min.js"></script>
+<!--jQuery is not required by the library. We use it in DEMO page-->
+<!-- CryptoStego JS files.-->
+<script type="text/javascript" src="../js/Crypto/sha512.js"></script>
+<script type="text/javascript" src="../js/Crypto/utf_8.js"></script>
+<script type="text/javascript" src="../js/Crypto/mersenne-twister.js"></script>
+<script type="text/javascript" src="../js/Crypto/utils.js"></script>
+<script type="text/javascript" src="../js/Crypto/readimg.js"></script>
+<script type="text/javascript" src="../js/Crypto/setimg.js"></script>
+<script type="text/javascript" src="../js/Crypto/main.js"></script>
+<!--<script type="text/javascript" src="../js/Crypto/cryptostego.min.js"></script>-->
+<script type="text/javascript">
+    // function writeIMG() {
+    //     $("#resultimg").hide();
+    //     $("#resultimg").attr('src', '');
+    //     $("#result").html('Processing...');
+    //
+    //     function writefunc() {
+    //         var t = writeMsgToCanvas('canvas', "201250048 沈霁昀", "", 0);
+    //         if (t === true) {
+    //             var myCanvas = document.getElementById("canvas");
+    //             var image = myCanvas.toDataURL("image/png");
+    //             $("#resultimg").attr('src', image);
+    //             $("#result").html('Success!');
+    //             $("#resultimg").show();
+    //         } else $("#result").html(t);
+    //     }
+    //
+    //     loadIMGtoCanvas('file', 'canvas', writefunc);
+    // }
+    function writeIMG() {
+        function writefunc() {
+            if (writeMsgToCanvas('canvas', '201250048 沈霁昀', '', 0) != null) {
+                var main = document.getElementById("main");
+                var myCanvas = document.getElementById("canvas");
+                var image = document.createElement('img');
+                image.src = myCanvas.toDataURL("image/png");
+                imgUrl = image.src;
+                image.style = "position: relative; width: 40%; height: 100vh; object-fit: contain;"
+                main.append(image);
+                // console.log(image);
+            }
+        }
+
+        loadIMGtoCanvas1('file', 'canvas', writefunc, 1000, '../images/pic2.jpg');
+    }
+
+    function readIMG() {
+        $("#resultimg").hide();
+        $("#result").html('Processing...');
+
+        function readfunc() {
+            var t = readMsgFromCanvas('canvas', "", 0);
+            $("#result").html('Success!');
+            if (t != null) {
+                alert(t);
+            } else $("#result").html('ERROR REAVEALING MESSAGE!');
+        }
+
+        loadIMGtoCanvas('file', 'canvas', readfunc);
+    }
+</script>
+
+</body>
+</html>

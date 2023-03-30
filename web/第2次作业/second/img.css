@@ -1,0 +1,32 @@
+body {
+    background-color: #e8d6a6;
+}
+
+div.watermark {
+    position: absolute;
+    /*left: 0;*/
+    /*top: 0;*/
+    width: 100vw;
+    height: 100vh;
+
+    /*--watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='144px' height='144px'%3E  %3Ctext x='18' y='0' fill-opacity='0.1' fill='%23000' transform='translate(0,144)rotate(-45)' font-size='18'%3E201250048 沈霁昀%3C/text%3E%3C/svg%3E");*/
+    --watermark: null;
+    background-image: var(--watermark);
+    /*opacity: .5;*/
+    /*z-index: 3000;*/
+    pointer-events: none;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /*margin: auto;*/
+    position: absolute;
+    border-radius: 1% 1% 1% 1%;
+    /*top: 0;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+    z-index: -1;
+}
