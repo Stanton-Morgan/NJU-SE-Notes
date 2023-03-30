@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>一级界面</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bright.css">
+</head>
+
+<body>
+<div class="box">
+    <div class="item">
+        <button type="button" onclick="theme()">切换主题</button>
+    </div>
+    <div class="item">
+        <a href="./second/1.html"><img src="./images/pic1.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/2.html"><img src="./images/pic2.jpg" class="img"></a>
+    </div>
+    <div class="item">
+        <a href="./second/3.html"><img src="./images/pic3.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/4.html"><img src="./images/pic4.jpg" class="img"></a>
+    </div>
+    <div class="item">
+        <a href="./second/5.html"><img src="./images/pic5.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/6.html"><img src="./images/pic6.jpg" class="img"></a>
+    </div>
+    <div class="item">
+        <a href="./second/7.html"><img src="./images/pic7.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/8.html"><img src="./images/pic8.jpg" class="img"></a>
+    </div>
+    <div class="item">
+        <a href="./second/9.html"><img src="./images/pic9.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/10.html"><img src="./images/pic10.jpg" class="img"></a>
+    </div>
+    <div class="item">
+        <a href="./second/11.html"><img src="./images/pic11.jpg" class="img"></a>
+    </div>
+
+    <div class="item">
+        <a href="./second/12.html"><img src="./images/pic12.jpg" class="img"></a>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+    function theme() {
+        var link = document.head.getElementsByTagName("link")[0]
+        if (link.getAttribute("href") === "CSS/bright.css") {
+            link.setAttribute("href", "CSS/dark.css")
+        } else link.setAttribute("href", "CSS/bright.css")
+    }
+</script>
+</html>

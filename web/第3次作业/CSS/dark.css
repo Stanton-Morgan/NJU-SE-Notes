@@ -1,0 +1,23 @@
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(59deg, #ffffff 0%, #2f2828 33%, #000000 100%);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.box {
+    column-count: 4;
+    column-gap: 10px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.img:hover {
+    opacity: 0.5;
+}
